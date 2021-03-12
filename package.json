@@ -1,0 +1,43 @@
+{
+  "name": "@salesvista/format",
+  "version": "1.0.0",
+  "description": "Format some numbers",
+  "main": "lib/index.js",
+  "files": [
+    "lib/index.js"
+  ],
+  "scripts": {
+    "prepare": "babel src -d lib",
+    "pretest": "standard && npm run prepare",
+    "test": "tap test.js",
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
+    "html": "nyc report --reporter=html && open coverage/index.html",
+    "release": "standard-version"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SalesVista/format.git"
+  },
+  "keywords": [
+    "format",
+    "number",
+    "utils",
+    "locale"
+  ],
+  "author": "nexdrew",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SalesVista/format/issues"
+  },
+  "homepage": "https://github.com/SalesVista/format#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.13.10",
+    "@babel/core": "^7.13.10",
+    "@babel/plugin-transform-object-assign": "^7.12.13",
+    "@babel/preset-env": "^7.13.10",
+    "coveralls": "^3.1.0",
+    "standard": "^16.0.3",
+    "standard-version": "^9.1.1",
+    "tap": "^14.11.0"
+  }
+}
