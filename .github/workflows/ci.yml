@@ -10,6 +10,7 @@ jobs:
       matrix:
         node-version:
           - 14
+          - 16
     steps:
       - name: Checkout Code
         uses: actions/checkout@v2
