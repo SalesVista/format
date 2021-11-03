@@ -124,6 +124,7 @@ tap.test('formatAs', t => {
   t.strictEqual(format.formatAs(0, format.UNIT), '0')
   t.strictEqual(format.formatAs(0, null, { locale: 'ja-JP', currency: 'jpy', style: 'currency' }), '￥0')
   t.strictEqual(format.formatAs(12345.12345, format.CURRENCY, { locale: 'ja-JP', currency: 'jpy' }), '￥12,345')
+  t.strictEqual(format.formatAs(12345.12345, format.CURRENCY, { locale: 'en_US', currency: 'jpy' }), '¥12,345') // locale deliberately invalid
   t.strictEqual(format.formatAs(12345.12345, format.CURRENCY, { locale: 'fr-FR', currency: 'eur' }), '12 345,12 €')
   t.strictEqual(format.formatAs(12345.12345, format.CURRENCY, format.terse({ locale: 'fr-FR', currency: 'eur' })), '12 345,12 €')
   t.strictEqual(format.formatAs(12345, format.CURRENCY, { locale: 'fr-FR', currency: 'eur' }), '12 345,00 €')

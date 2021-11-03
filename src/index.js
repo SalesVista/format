@@ -44,6 +44,7 @@ function isValidType (valueType) {
 function formatAs (value, valueType, opts) {
   opts = Object.assign({}, opts)
   if (!opts.locale) opts.locale = 'en'
+  opts.locale = String(opts.locale).replace(/_/g, '-') // poor-man's normalize
   if (!opts.currency) opts.currency = 'usd'
   if (!opts.style) opts.style = intlNumberFormatStyles[valueType] || 'decimal'
 
